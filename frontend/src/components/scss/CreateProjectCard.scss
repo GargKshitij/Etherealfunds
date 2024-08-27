@@ -1,0 +1,208 @@
+.CreateProjectCard-div {
+  position: fixed; // Use fixed to keep it centered regardless of scrolling
+  top: 55%;
+  left: 50%;
+  height: 79%;
+  transform: translate(-50%, -50%); // Center the div precisely
+  display: flex; // Ensures children are laid out inline
+  flex-direction: row; // Align children side by side
+  align-items: center; // Align items vertically in the center// Align items horizontally in the center
+  width: 70%;
+  border: 2px solid #ffffff65;
+  background: rgba(41, 40, 40, 0.89); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect for the glassmorphic style */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  justify-content: center;
+  z-index: 2; // Make sure it sits above other content// Optional: adds shadow for better visibility
+}
+
+.Form-div {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+.HeaderProject-h1 {
+  font-size: 1rem;
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+.FractionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  gap: 2%;
+}
+.FractionValueContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  align-items: center;
+  width: 100%;
+  gap: 3%;
+}
+.FractionBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 100%;
+  overflow: scroll;
+  gap: 3%;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  width: 100%; /* Set relative positioning for pseudo-elements */
+}
+
+.FractionInput {
+  flex: 1; /* Allows the input to grow and fill the space */
+  border: 1px solid #ccc;
+  background-color: #2f2f2f;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  inset: "%";
+}
+
+.InputWithUnit {
+  position: relative; /* Needed for absolute positioning of children */
+  display: flex;
+  width: 100%;
+  align-items: center; /* Keeps the input and unit vertically aligned */
+  background-color: #2f2f2f; /* Match input background */
+  border-radius: 5px; /* Match your input field's border-radius */
+}
+
+.InputWithUnit input {
+  flex: 1; /* Allows input to take up all space except for the unit */
+  color: white;
+
+  background-color: transparent; /* Matches the container background */
+  padding-right: 50px; /* Provides space for the unit */
+}
+
+.PlotBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3%;
+  width: 100%;
+  height: 300;
+}
+.Plot {
+  width: 50%;
+  height: 20%;
+}
+
+.InputWithUnit .Unit {
+  position: absolute;
+  right: 10px; /* Adjusts spacing to the right of the container */
+  color: white;
+}
+
+.FractionInput::after {
+  content: "%"; /* Add the % sign */
+  position: absolute;
+  right: 10px; /* Adjust distance to the right of the input field */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none; /* Prevent the pseudo-element from being clickable */
+}
+.FractionInput:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow as a focus indicator */
+}
+.FractionValue {
+  color: white; /* Adjust based on your layout preferences */
+  text-align: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.FormField {
+  margin-bottom: 5px;
+
+  // Adds space between each form field
+}
+
+label {
+  display: block; // Ensures the label is on a separate line
+  margin-bottom: 5px; // Space between the label and the input field
+}
+
+input,
+textarea {
+  padding-left: 8px;
+  color: white;
+  width: 100%; // Ensures inputs take full width of their container
+  appearance: textfield;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; // Gives a border to the input fields
+  background-color: #2f2f2f;
+  border-radius: 5px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 1rem;
+}
+
+.SubmitButton-button {
+  padding: 10px 20px; // Size adjustments for better interaction
+  background-color: #007bff; // Example button color
+  color: white;
+  border: none;
+  border-radius: 5px; // Rounded corners for the button
+  cursor: pointer; // Pointer on hover
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3; // Darker on hover
+  }
+}
+.Code-div {
+  flex: 1; // Takes up the remaining space in the flex container
+  max-width: 70%; // Limits width to half of the parent div
+  overflow: scroll; // Adds scroll to the div if content overflows
+  background-color: #2f2f2f;
+  border-radius: 15px; // Rounded corners for aesthetics
+  max-height: 100%;
+}
+.Wrapper-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+  height: 100%;
+}
+
+.Form-div h1 {
+  font-size: 2.2rem;
+}
+
+.SubmitButton-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  color: black;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Bai Jamjuree", sans-serif;
+  width: 100%;
+}
+.SubmitButton-button:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
